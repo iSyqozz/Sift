@@ -7,6 +7,12 @@ export async function getCollections(): Promise<collectionEntry[]> {
     const jsonRes = await fetch(API_URL + 'marketplace/popular_collections', {
         method: 'GET',
         cache: 'no-store',
+        headers: {
+            'Access-Control-Allow-Credentials': 'true',
+            'Access-Control-Allow-Methods': 'GET,DELETE,PATCH,POST,PUT',
+            "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+            "Access-Control-Allow-Origin": '*'
+        }
     })
     const res = await jsonRes.json();
     return res.map((entry: collectionEntry) => {
@@ -19,6 +25,12 @@ export async function getFloored(name: string): Promise<any> {
     const jsonRes = await fetch(API_URL + 'collections/' + name + '/listings?limit=5', {
         method: 'GET',
         cache: 'no-store',
+        headers: {
+            'Access-Control-Allow-Credentials': 'true',
+            'Access-Control-Allow-Methods': 'GET,DELETE,PATCH,POST,PUT',
+            "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+            "Access-Control-Allow-Origin": '*'
+        }
     })
     const res = await jsonRes.json();
     return res

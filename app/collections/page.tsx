@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link"
-import { SetStateAction, useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { getCollections, getFloored, getNFTData, adjustDisplayName } from "@utils/server"
 import { collectionEntry } from "@constants"
 import { ImageHover } from "@components"
