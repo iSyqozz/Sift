@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Sift',
     description: 'Discover the most trending collections across marketplaces and stay ahead of the game.',
     card: 'summary',
-    creator: 'iSy',
+    creator: '@iSyqozz512',
     site: '@NioWalkers'
   },
   creator: 'iSy',
