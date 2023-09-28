@@ -27,6 +27,13 @@ export const metadata: Metadata = {
     url: 'www.sift.io',
     siteName: 'Sift',
   },
+  twitter: {
+    title: 'Sift',
+    description: 'Discover the most trending collections across marketplaces and stay ahead of the game.',
+    card: 'summary',
+    creator: 'iSy',
+    site: '@@NioWalkers'
+  },
   creator: 'iSy',
   publisher: 'iSy',
   generator: 'Next.js',
