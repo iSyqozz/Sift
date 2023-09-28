@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: 'iSy',
-      url: 'https://github.com/iSyqozz'
+      url: 'https://linktr.ee/isyqozz512'
     }
   ],
   keywords: "Neo, NFT, NFT project, NeoWalkers, revshare,",
