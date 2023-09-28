@@ -2,9 +2,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState, useCallback } from "react"
-import { getCollections, getFloored, getNFTData, adjustDisplayName } from "@utils/server"
+
 import { collectionEntry } from "@constants"
 import { ImageHover } from "@components"
+
+import { getNFTData, adjustDisplayName, fetchCollections, fetchFloored } from "@utils/client"
 
 
 const amounts = [
@@ -34,13 +36,14 @@ const CollectionsPage = () => {
 
 
   const pageRefresh = useCallback(async () => {
-    const freshCollections = await getCollections()
+    const freshCollections = await fetchCollections()
     setCollections(freshCollections);
     setLoading(false);
   }, [])
 
   const nftsFetch = useCallback(async (collection: collectionEntry) => {
-    const floored = await getFloored(collection.symbol)
+    
+    const floored = await fetchFloored(collection.symbol)
     const mints = floored.map((entry: any) => entry.tokenMint ?? '')
     const nfts = (await getNFTData(mints)).map(((entry, _) => {
       return { ...entry, price: floored[_].price }
