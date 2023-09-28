@@ -253,8 +253,8 @@ const CollectionsPage = () => {
                                 {
                                   entry.nfts!.map((nft) => (
 
-                                    <Link target="_blank" className="w-full" href={`https://magiceden.io/item-details/${nft.mintAddress}`}>
-                                      <div key={nft.name} className='hover:bg-slate-700 group cursor-pointer dark:text-white text-slate-700 w-full items-center flex justify-between'>
+                                    <Link key={nft.name} target="_blank" className="w-full" href={`https://magiceden.io/item-details/${nft.mintAddress}`}>
+                                      <div className='hover:bg-slate-700 group cursor-pointer dark:text-white text-slate-700 w-full items-center flex justify-between'>
                                         <div className=' group-hover:text-white ml-2 dark:text-white text-slate-700 truncate'>{adjustDisplayName(nft.name!, nft.tick!)}</div>
                                         <div className='flex items-center justify-end gap-1 mr-2'>
                                           <div className=' group-hover:text-white dark:text-white text-slate-700'>{nft.price!.toFixed(2)}</div>
