@@ -6,7 +6,7 @@ import { Wallet, ScrollProg, ScrollUp, Navbar, Footer } from '@components'
 const ubuntu = Ubuntu({subsets: ['latin'], weight:['300','400','500','700']})
 const baseUrl = process.env.NODE_ENV === 'development'
   ? `http://localhost:${process.env.PORT || 3000}` :
-  'https://' + process.env.VERCEL_ENV as string;
+  'https://' + process.env.VERCEL_URL as string;
 
 
 export const metadata: Metadata = {
