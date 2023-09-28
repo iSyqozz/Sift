@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: 'Discover the most trending collections across marketplaces and stay ahead of the game.',
     card: 'summary',
     creator: 'iSy',
-    site: '@@NioWalkers'
+    site: '@NioWalkers'
   },
   creator: 'iSy',
   publisher: 'iSy',
