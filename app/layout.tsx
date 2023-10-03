@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sift',
     description: 'Discover the most trending collections across marketplaces and stay ahead of the game.',
-    url: 'www.sift.io',
+    url: 'https://www.sift.zone/',
     siteName: 'Sift',
   },
   twitter: {

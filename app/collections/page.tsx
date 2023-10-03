@@ -28,7 +28,7 @@ const CollectionsPage = () => {
   const { publicKey } = useWallet();
   const owner = publicKey?.toBase58() || ''
   const [isHolder, setIsHolder] = useState(false);
-
+  const [checkingHolder, setcheckingHolder] = useState(false);
 
   const [collections, setCollections] = useState<collectionEntry[]>([]);
   const [searchFilter, setSearchFilter] = useState('');
@@ -74,13 +74,17 @@ const CollectionsPage = () => {
   useEffect(() => {
     if (owner) {
       setLoading(true)
+      setcheckingHolder(true)
 
       getZarg(owner).then(res => {
+
+        setcheckingHolder(false)
+
         if (res) {
           setIsHolder(true)
-        } else (
+        } else {
           setIsHolder(false)
-        )
+        }
         pageRefresh();
       })
     }
@@ -314,19 +318,32 @@ const CollectionsPage = () => {
               </div>
 
             ) : (
-              <div className="mx-auto flex flex-col items-center justify-center gap-2 mt-12 mb-24 text-2xl text-indigo-400 font-medium">
-                <p  className="text-indigo-400 font-medium">No Zarg Slime Found. </p>
-                <div className="text-indigo-400 font-medium">Get One <span className="hover:brightness-150 brightness-150 text-indigo-400 font-medium" ><Link className="text-indigo-400 font-medium" href={'https://magiceden.io/marketplace/_zargslime'} target="_blank">Here!</Link></span></div>
-              </div>
+              !checkingHolder && (
+                <div className="mx-auto flex flex-col items-center justify-center gap-2 mt-12 mb-24 text-2xl text-indigo-400 font-medium">
+                  <p className="text-indigo-400 font-medium">No Zarg Slime Found. </p>
+                  <div className="text-indigo-400 font-medium">Get One <span className="hover:brightness-150 brightness-150 text-indigo-400 font-medium" ><Link className="text-indigo-400 font-medium" href={'https://magiceden.io/marketplace/_zargslime'} target="_blank">Here!</Link></span></div>
+                </div>
+              )
             )}
           </div>
-
         ) : (
           <h2 className="block mt-12 mb-24 text-lg md:text-2xl text-indigo-400 font-medium">
             Connect your wallet to view this page
           </h2>
         )}
+
       </section>
+
+      {checkingHolder && (
+        <div className="h-screen w-screen fixed top-0 left-0 z-50 bg-black bg-opacity-70 flex items-center justify-center">
+          <Image className=" animate-spin"
+            width={100}
+            height={100}
+            alt="loadin"
+            src={'/icons/loading.png'}
+          ></Image>
+        </div>
+      )}
     </div>
   )
 }
