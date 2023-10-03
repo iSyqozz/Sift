@@ -225,7 +225,7 @@ const CollectionsPage = () => {
 
                             <div className='bg-black bg-opacity-10 py-1 w-[100%] dark:text-white text-slate-700 text-sm flex items-center justify-center gap-2'>
                               <div className='dark:text-white text-slate-700 truncate'>{entry.name}</div>
-                              <Link href={'/collections/' + entry.name}>
+                              <Link href={'https://magiceden.io/marketplace/' + entry.symbol}>
                                 <Image className='cursor-pointer hover:scale-110 dark:invert-0 invert hover:invert-0 duration-75 mb-[3px]' width={20} height={20} alt='solana' src={'/icons/link.png'}></Image>
                               </Link>
                             </div>
