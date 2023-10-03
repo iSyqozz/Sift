@@ -135,7 +135,6 @@ async function GET(req: Request) {
         let isValid = false
         const tokenAccounts = await connection.getParsedTokenAccountsByOwner(ownerAddress, { programId: new PublicKey('TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA') });
 
-
         for (var cand in tokenAccounts.value) {
 
             const address = (tokenAccounts.value[cand].account.data.parsed['info'].mint)
@@ -150,7 +149,7 @@ async function GET(req: Request) {
         }
         return NextResponse.json(isValid)
     } catch (e) {
-        //console.log(e);
+        console.log(e);
         return NextResponse.json(false);
     }
 }
