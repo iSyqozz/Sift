@@ -315,8 +315,8 @@ const CollectionsPage = () => {
 
             ) : (
               <div className="mx-auto flex flex-col items-center justify-center gap-2 mt-12 mb-24 text-2xl text-indigo-400 font-medium">
-                <p  className="text-indigo-400 font-medium">No Zarg Slime Found </p>
-                <div className="text-indigo-400 font-medium">Get One <span className="hover:brightness-150 brightness-150 text-indigo-400 font-medium" ><Link className="text-indigo-400 font-medium" href={'https://magiceden.io/marketplace/_zargslime'} target="_blank">Here</Link></span></div>
+                <p  className="text-indigo-400 font-medium">No Zarg Slime Found. </p>
+                <div className="text-indigo-400 font-medium">Get One <span className="hover:brightness-150 brightness-150 text-indigo-400 font-medium" ><Link className="text-indigo-400 font-medium" href={'https://magiceden.io/marketplace/_zargslime'} target="_blank">Here!</Link></span></div>
               </div>
             )}
           </div>
