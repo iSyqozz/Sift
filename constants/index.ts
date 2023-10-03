@@ -1,4 +1,5 @@
 export const API_URL = 'https://api-mainnet.magiceden.dev/v2/';
+export const TOKEN_ADDRESS = '5tY1iB3VV9oFVV84tDwVWYomUdCHTzKtsdAimRZfup4o';
 
 export interface nftEntry {
     name?: string,

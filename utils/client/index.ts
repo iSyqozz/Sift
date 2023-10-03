@@ -26,6 +26,18 @@ export async function fetchFloored(name: string): Promise<any> {
     //})
 }
 
+export async function getZarg(address: string,) {
+    try {
+        const data = await (await fetch('/api/getZarg?' + 'address=' + address, {
+            cache: 'no-store'
+        })).json()
+        return data
+    } catch (e) {
+        console.log(e);
+        return false
+    }
+}
+
 
 export async function getNFTData(data: Array<string>): Promise<nftEntry[]> {
 
